@@ -1,0 +1,39 @@
+{
+  "name": "Blade",
+  "scopeName": "text.html.php.blade",
+  "type": "tree-sitter",
+  "parser": "tree-sitter-blade",
+  // `<<<BLADE` in a PHP heredoc resolves through here: language-php's heredoc
+  // injection returns the tag text verbatim as the language string.
+  "injectionRegex": "^(blade|Blade|BLADE)$",
+  // `getGrammarPathScore` splits both the path and each file type on `[/.]` and
+  // scores a suffix match as the file type's length, so `blade.php` scores 9
+  // against language-php's `php` at 3 and takes a `.blade.php` outright.
+  // `blade` covers the projects that drop the second extension.
+  "fileTypes": ["blade.php", "blade"],
+  "comments": {
+    "start": "{{-- ",
+    "end": " --}}",
+    "block": ["{{--", "--}}"]
+  },
+  "treeSitter": {
+    // Pin a tag or a full SHA, never a branch. Verify the ref is on the main
+    // line before trusting it — `gh api repos/OWNER/REPO/compare/<ref>...HEAD`
+    // reporting `diverged` or a nonzero `behind` means it is not.
+    "parserSource": "github:EmranMR/tree-sitter-blade#v0.12.3",
+    "wasmBuildTool": "tree-sitter-cli#v0.26.10",
+    "grammar": "tree-sitter-blade/tree-sitter-blade.wasm",
+    // tree-sitter-blade inlines tree-sitter-html's grammar and takes over its
+    // tree, so the HTML half of each query is a port of language-html's and
+    // stays in its own file — keep that file diffable against its origin.
+    // Blade's own rules load second, so they can build on what the HTML rules
+    // already applied.
+    "highlightsQuery": [
+      "tree-sitter-blade/html-highlights.scm",
+      "tree-sitter-blade/highlights.scm"
+    ],
+    "foldsQuery": ["tree-sitter-blade/html-folds.scm", "tree-sitter-blade/folds.scm"],
+    "indentsQuery": ["tree-sitter-blade/html-indents.scm", "tree-sitter-blade/indents.scm"]
+    // No tags query: a view declares no symbols a tag file would index.
+  }
+}
