@@ -13,7 +13,7 @@ Blade language support.
 
 ## Installation
 
-To install `language-blade` search for _language-blade_ in the Install pane of the Lumine settings or run `lumine --install lumine-code/language-blade`.
+To install `language-blade` search for it in the Install pane of the Lumine settings, or run the command `lumine --install lumine-code/language-blade`.
 
 ## Usage
 
@@ -25,8 +25,8 @@ Directive arguments and echoes hold bare PHP with no `<?php` to enter PHP mode, 
 
 ## Services
 
-- **hyperlink.injection** (`^1.0.0`): consumed to highlight URLs inside comments and attribute values as clickable links.
-- **todo.injection** (`^1.0.0`): consumed to highlight `TODO`-style markers inside comments.
+- `hyperlink.injection`: consumed to highlight URLs inside comments and attribute values as clickable links.
+- `todo.injection`: consumed to highlight `TODO`-style markers inside comments.
 
 ## Contributing
 
