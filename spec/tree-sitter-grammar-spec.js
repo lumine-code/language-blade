@@ -15,7 +15,7 @@ const path = require("path");
 
 describe("Blade Tree-sitter grammar", () => {
   beforeEach(async () => {
-    lumine.config.set("language.useTreeSitterParsers", true);
+    lumine.config.set("editor.useTreeSitterParsers", true);
     await lumine.packages.activatePackage("language-blade");
     // The fixture asserts PHP scopes inside directives and echoes, and
     // JavaScript inside Livewire and Alpine attributes. Without these the

@@ -27,7 +27,7 @@ describe("Blade injections", () => {
   let editor;
 
   beforeEach(async () => {
-    lumine.config.set("language.useTreeSitterParsers", true);
+    lumine.config.set("editor.useTreeSitterParsers", true);
     await lumine.packages.activatePackage("language-blade");
     await lumine.packages.activatePackage("language-php");
     await lumine.packages.activatePackage("language-javascript");

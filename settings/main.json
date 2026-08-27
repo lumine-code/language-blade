@@ -6,21 +6,17 @@
       // of a word or every completion stops at the dash.
       "extraWordCharacters": "-"
     },
-    "language": {
+    "bracket-matcher": {
+      "autocompleteCharacters": ["()", "[]", "{}", "\"\"", "''"]
+    },
+    "editor": {
       "commentStart": "{{-- ",
       "commentEnd": " --}}",
       "commentDelimiters": {
         "block": ["{{--", "--}}"]
       },
-      // Markup and directives, not braces. Ported from language-html's pair,
-      // with its PHP and Smarty alternations replaced by Blade's own block
-      // directives — the openers that have a matching `@end…`, plus the branch
-      // keywords, which dedent their own line.
       "increaseIndentPattern": "(?x)\n<(?!\\?|(?:area|base|br|col|frame|hr|html|img|input|link|meta|param)\\b|[^>]*/>)\n([-_\\.A-Za-z0-9]+)(?=\\s|>)\\b[^>]*>(?!.*</\\1>)\n|<!--(?!.*-->)\n|\\{\\{--(?!.*--\\}\\})\n|@(if|unless|isset|empty|auth|guest|production|env|hasSection|sectionMissing|error|can|cannot|canany|feature|for|foreach|forelse|while|switch|section|push|pushOnce|pushIf|prepend|prependOnce|once|verbatim|fragment|php|slot|component|scope|task|story|servers|setup|finally)\\b(?!.*@end)\n|@(else|elseif|case|default|empty)\\b",
       "decreaseIndentPattern": "(?x)\n^\\s*\n(</(?!html)\n  [-_\\.A-Za-z0-9]+\\b[^>]*>\n  |-->\n  |--\\}\\}\n  |@(end[a-zA-Z]+|else|elseif|case|default|empty|stop|show|append|overwrite)\\b\n)"
-    },
-    "bracket-matcher": {
-      "autocompleteCharacters": ["()", "[]", "{}", "\"\"", "''"]
     }
   }
 }
