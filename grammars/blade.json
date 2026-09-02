@@ -21,7 +21,7 @@
     // line before trusting it — `gh api repos/OWNER/REPO/compare/<ref>...HEAD`
     // reporting `diverged` or a nonzero `behind` means it is not.
     "parserSource": "github:EmranMR/tree-sitter-blade#v0.12.3",
-    "wasmBuildTool": "tree-sitter-cli#v0.26.13",
+    "wasmBuildTool": "tree-sitter-cli#v0.27.0",
     "grammar": "blade.wasm",
     // tree-sitter-blade inlines tree-sitter-html's grammar and takes over its
     // tree, so the HTML half of each query is a port of language-html's and
