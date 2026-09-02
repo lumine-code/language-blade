@@ -5,7 +5,7 @@
   "parser": "tree-sitter-blade",
   // `<<<BLADE` in a PHP heredoc resolves through here: language-php's heredoc
   // injection returns the tag text verbatim as the language string.
-  "injectionRegex": "^(blade|Blade|BLADE)$",
+  "injectionNames": ["blade"],
   // `getGrammarPathScore` splits both the path and each file type on `[/.]` and
   // scores a suffix match as the file type's length, so `blade.php` scores 9
   // against language-php's `php` at 3 and takes a `.blade.php` outright.
@@ -22,18 +22,15 @@
     // reporting `diverged` or a nonzero `behind` means it is not.
     "parserSource": "github:EmranMR/tree-sitter-blade#v0.12.3",
     "wasmBuildTool": "tree-sitter-cli#v0.26.13",
-    "grammar": "tree-sitter-blade/tree-sitter-blade.wasm",
+    "grammar": "blade.wasm",
     // tree-sitter-blade inlines tree-sitter-html's grammar and takes over its
     // tree, so the HTML half of each query is a port of language-html's and
     // stays in its own file — keep that file diffable against its origin.
     // Blade's own rules load second, so they can build on what the HTML rules
     // already applied.
-    "highlightsQuery": [
-      "tree-sitter-blade/html-highlights.scm",
-      "tree-sitter-blade/highlights.scm"
-    ],
-    "foldsQuery": ["tree-sitter-blade/html-folds.scm", "tree-sitter-blade/folds.scm"],
-    "indentsQuery": ["tree-sitter-blade/html-indents.scm", "tree-sitter-blade/indents.scm"]
+    "highlightsQuery": ["blade-html-highlights.scm", "blade-highlights.scm"],
+    "foldsQuery": ["blade-html-folds.scm", "blade-folds.scm"],
+    "indentsQuery": ["blade-html-indents.scm", "blade-indents.scm"]
     // No tags query: a view declares no symbols a tag file would index.
   }
 }

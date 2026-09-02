@@ -14,9 +14,7 @@
       "commentEnd": " --}}",
       "commentDelimiters": {
         "block": ["{{--", "--}}"]
-      },
-      "increaseIndentPattern": "(?x)\n<(?!\\?|(?:area|base|br|col|frame|hr|html|img|input|link|meta|param)\\b|[^>]*/>)\n([-_\\.A-Za-z0-9]+)(?=\\s|>)\\b[^>]*>(?!.*</\\1>)\n|<!--(?!.*-->)\n|\\{\\{--(?!.*--\\}\\})\n|@(if|unless|isset|empty|auth|guest|production|env|hasSection|sectionMissing|error|can|cannot|canany|feature|for|foreach|forelse|while|switch|section|push|pushOnce|pushIf|prepend|prependOnce|once|verbatim|fragment|php|slot|component|scope|task|story|servers|setup|finally)\\b(?!.*@end)\n|@(else|elseif|case|default|empty)\\b",
-      "decreaseIndentPattern": "(?x)\n^\\s*\n(</(?!html)\n  [-_\\.A-Za-z0-9]+\\b[^>]*>\n  |-->\n  |--\\}\\}\n  |@(end[a-zA-Z]+|else|elseif|case|default|empty|stop|show|append|overwrite)\\b\n)"
+      }
     }
   }
 }

@@ -3,7 +3,7 @@
 ;
 ; tree-sitter-blade inlines tree-sitter-html's grammar and takes over its tree,
 ; so every node and token below carries the same name it does there and this
-; file is a port of `language-html/grammars/tree-sitter-html/highlights.scm`.
+; file is a port of `language-html/grammars/html-highlights.scm`.
 ; Keep it diffable against that origin: Blade's own rules live in
 ; `highlights.scm`, which loads after this file.
 ;
