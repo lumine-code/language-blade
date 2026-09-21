@@ -8,6 +8,7 @@ const path = require("path");
 // which grammar an injection resolved to and over exactly which range.
 
 const FIXTURE = path.join(__dirname, "fixtures", "sample.blade.php");
+const packagePath = (name) => path.resolve(__dirname, "..", "..", name);
 
 // The first line whose text contains `needle`, offset columns in from there.
 function positionOf(editor, needle, offset = 0) {
@@ -28,9 +29,9 @@ describe("Blade injections", () => {
 
   beforeEach(async () => {
     await lumine.packages.activatePackage("language-blade");
-    await lumine.packages.activatePackage("language-php");
-    await lumine.packages.activatePackage("language-javascript");
-    await lumine.packages.activatePackage("language-shellscript");
+    await lumine.packages.activatePackage(packagePath("language-php"));
+    await lumine.packages.activatePackage(packagePath("language-javascript"));
+    await lumine.packages.activatePackage(packagePath("language-shellscript"));
 
     editor = await lumine.workspace.open(FIXTURE);
     await editor.languageMode.ready;

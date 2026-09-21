@@ -3,6 +3,7 @@ const path = require("path");
 const { Point } = require("lumine");
 
 const HTML_HIGHLIGHTS_PATH = path.join(__dirname, "..", "grammars", "blade-html-highlights.scm");
+const packagePath = (name) => path.resolve(__dirname, "..", "..", name);
 
 // Asserts the scopes the grammar actually produces, using the fixture beside
 // this file. `runGrammarTests` reads `<- scope` and `^ scope` assertions out of
@@ -23,8 +24,8 @@ describe("Blade Tree-sitter grammar", () => {
     // The fixture asserts PHP scopes inside directives and echoes, and
     // JavaScript inside Livewire and Alpine attributes. Without these the
     // injections resolve to nothing and the failure does not say why.
-    await lumine.packages.activatePackage("language-php");
-    await lumine.packages.activatePackage("language-javascript");
+    await lumine.packages.activatePackage(packagePath("language-php"));
+    await lumine.packages.activatePackage(packagePath("language-javascript"));
   });
 
   it("tokenizes the fixture", async () => {
