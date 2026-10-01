@@ -3,7 +3,10 @@ const path = require("path");
 const { Point } = require("lumine");
 
 const HTML_HIGHLIGHTS_PATH = path.join(__dirname, "..", "grammars", "blade-html-highlights.scm");
-const packagePath = (name) => path.resolve(__dirname, "..", "..", name);
+const packagePath = (name) => {
+  const sibling = path.resolve(__dirname, "..", "..", name);
+  return fs.existsSync(sibling) ? sibling : name;
+};
 
 // Asserts the scopes the grammar actually produces, using the fixture beside
 // this file. `runGrammarTests` reads `<- scope` and `^ scope` assertions out of
@@ -78,15 +81,17 @@ describe("Blade Tree-sitter grammar", () => {
     editor.setText(lines.join("\r\n"));
     const languageMode = editor.getBuffer().languageMode;
     await languageMode.ready;
-    expect((await editor.getSyntaxDiagnostics()).hasError).toBe(false);
+    expect(editor.getBuffer().getLanguageMode().rootLanguageLayer.tree.rootNode.hasError).toBe(
+      false,
+    );
 
     const startRow = 2998;
     const endRow = startRow + 6;
-    const groups = await editor.getGrammarQueryCaptureGroups("highlightsQuery", {
+    const query = await editor.getGrammar().getQuery("highlightsQuery");
+    const captures = query.captures(languageMode.rootLanguageLayer.tree.rootNode, {
       startPosition: new Point(startRow, 0),
       endPosition: new Point(endRow, 0),
     });
-    const captures = groups.find(({ grammar }) => grammar === editor.getGrammar()).captures;
 
     expect(captures.length).toBeLessThanOrEqual(60);
     expect(

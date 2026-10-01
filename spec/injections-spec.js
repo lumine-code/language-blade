@@ -1,3 +1,4 @@
+const fs = require("fs");
 const path = require("path");
 
 // The parts of the grammar `tree-sitter-grammar-spec.js` cannot reach, and the
@@ -8,7 +9,10 @@ const path = require("path");
 // which grammar an injection resolved to and over exactly which range.
 
 const FIXTURE = path.join(__dirname, "fixtures", "sample.blade.php");
-const packagePath = (name) => path.resolve(__dirname, "..", "..", name);
+const packagePath = (name) => {
+  const sibling = path.resolve(__dirname, "..", "..", name);
+  return fs.existsSync(sibling) ? sibling : name;
+};
 
 // The first line whose text contains `needle`, offset columns in from there.
 function positionOf(editor, needle, offset = 0) {
@@ -38,7 +42,9 @@ describe("Blade injections", () => {
   });
 
   it("parses the fixture without error", async () => {
-    expect((await editor.getSyntaxDiagnostics()).hasError).toBe(false);
+    expect(editor.getBuffer().getLanguageMode().rootLanguageLayer.tree.rootNode.hasError).toBe(
+      false,
+    );
   });
 
   it("reaches the bare-PHP dialect, not the HTML-wrapping one", () => {
