@@ -14,3 +14,16 @@
   (#match? @_name "^x-[a-z]+")
   (#not-any-of? @_name "x-teleport" "x-ref" "x-transition")
   (#set! injection.language "javascript"))
+
+((comment) @injection.owner @injection.content
+  (#set! injection.language "hyperlink")
+  (#set! injection.language-scope "none")
+  (#set! injection.include-children))
+
+((attribute_value) @injection.owner @injection.content
+  (#set! injection.language "hyperlink")
+  (#set! injection.language-scope "none"))
+((comment) @injection.owner @injection.content
+  (#set! injection.language "todo")
+  (#set! injection.language-scope "none")
+  (#set! injection.include-children))

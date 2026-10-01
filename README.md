@@ -23,10 +23,10 @@ Directive arguments and echoes hold bare PHP with no `<?php` to enter PHP mode, 
 
 `@task` bodies inside `@servers`/`@story` blocks are highlighted as shell script, and `<script>` and `<style>` elements as JavaScript and CSS.
 
-## Services
+## Injections
 
-- `hyperlink.injection`: consumed to highlight URLs inside comments and attribute values as clickable links.
-- `todo.injection`: consumed to highlight `TODO`-style markers inside comments.
+- Static Tree-sitter injections highlight URLs with `language-hyperlink`.
+- Static Tree-sitter injections highlight comment markers with `language-todo`.
 
 ## Contributing
 
