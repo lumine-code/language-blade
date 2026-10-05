@@ -26,7 +26,8 @@
     "lumine": "^1.0.0"
   },
   "specPackages": [
-    "language-php"
+    "language-php",
+    "symbol-tree-sitter"
   ],
   "scripts": {
     "test": "lumine --test spec",

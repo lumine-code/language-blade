@@ -31,7 +31,7 @@
     "highlightsQuery": ["blade-html-highlights.scm", "blade-highlights.scm"],
     "foldsQuery": ["blade-html-folds.scm", "blade-folds.scm"],
     "indentsQuery": ["blade-html-indents.scm", "blade-indents.scm"],
-    "injectionsQuery": "blade-injections.scm"
-    // No tags query: a view declares no symbols a tag file would index.
+    "injectionsQuery": "blade-injections.scm",
+    "tagsQuery": "blade-tags.scm"
   }
 }

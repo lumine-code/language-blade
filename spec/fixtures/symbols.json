@@ -1,0 +1,21 @@
+{
+  "text.html.php.blade": {
+    "text": "@section('content')\n<h1>Title</h1>\n@endsection\n@fragment('navigation')\n<nav>Menu</nav>\n@endfragment\n@push('scripts')\ntext\n@endpush\n@if($visible)\n<div/>\n@endif",
+    "symbols": [
+      {
+        "name": "content",
+        "tag": "module"
+      },
+      {
+        "name": "navigation",
+        "tag": "module"
+      },
+      {
+        "name": "scripts",
+        "tag": "module"
+      }
+    ],
+    "absent": ["h1", "nav", "visible"],
+    "only": true
+  }
+}
