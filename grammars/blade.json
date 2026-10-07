@@ -20,7 +20,7 @@
     // Pin a tag or a full SHA, never a branch. Verify the ref is on the main
     // line before trusting it — `gh api repos/OWNER/REPO/compare/<ref>...HEAD`
     // reporting `diverged` or a nonzero `behind` means it is not.
-    "parserSource": "github:EmranMR/tree-sitter-blade#v0.12.3",
+    "parserSource": "github:EmranMR/tree-sitter-blade#b5291d1ba207a8ebb8383b2ecb8a8a6535210a50",
     "wasmBuildTool": "tree-sitter-cli#v0.27.0",
     "grammar": "blade.wasm",
     // tree-sitter-blade inlines tree-sitter-html's grammar and takes over its
