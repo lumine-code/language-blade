@@ -11,6 +11,8 @@ Blade language support.
 - **Livewire and Alpine**: highlights `wire:`, `x-` and `:`/`@` attribute values as JavaScript, and bound component props as PHP.
 - **Folding**: folds directive blocks and elements from the parse tree rather than by indentation.
 
+![Blade syntax highlighting at the default editor font size.](.github/demo.png)
+
 ## Installation
 
 To install `language-blade` search for it in the Install pane of the Lumine settings, or run the command `lumine --install lumine-code/language-blade`.

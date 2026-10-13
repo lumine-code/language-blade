@@ -1,0 +1,16 @@
+{
+  "title": "language-blade",
+  "description": "Blade syntax highlighting in the editor.",
+  "recordedOn": "2026-10-13",
+  "sourceRevision": "f40186723439dd411198cb26b40174ebe83fb227",
+  "mode": "normal",
+  "fontSettings": "default",
+  "images": [
+    {
+      "file": "demo.png",
+      "label": "Blade syntax highlighting at the default editor font size.",
+      "width": 1100,
+      "height": 560
+    }
+  ]
+}
