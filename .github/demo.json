@@ -1,16 +1,61 @@
 {
   "title": "language-blade",
-  "description": "Blade syntax highlighting in the editor.",
-  "recordedOn": "2026-10-13",
-  "sourceRevision": "f40186723439dd411198cb26b40174ebe83fb227",
+  "description": "Blade syntax highlighting at the default editor font size.",
+  "recordedOn": "2026-10-14",
+  "sourceRevision": "0e8801d2e7eeb7677487d672203f27bca16476d6",
+  "themeSourceRevision": "14a69683b0e3238e2bc128fbfae3866c1e4ee9c6",
   "mode": "normal",
   "fontSettings": "default",
+  "scenario": "demo.js",
+  "recipeHash": "c9199f099709b0d6e38cdd01e8ddbe8d00409f080c46ce40d2c89c86678b07b0",
+  "environment": {
+    "platform": "win32",
+    "arch": "x64",
+    "electron": "44.7.0",
+    "chrome": "152.0.7977.130",
+    "devicePixelRatio": 1,
+    "locale": "en-GB",
+    "fontFamily": "Fira Code, Menlo, DejaVu Sans Mono, Consolas, monospace",
+    "fontSize": 14,
+    "themes": ["one-day-syntax", "one-day-ui"]
+  },
+  "viewport": { "width": 1100, "height": 560 },
+  "cornerRadius": 10,
+  "sources": {
+    "editor": {
+      "revision": "c4d7a05fe6960ae6fb041981d6cf13e9c0286b17",
+      "dirty": true,
+      "workingTreeHash": "af0ec098e764416df9522f3c6e555050b520e4700da382b2b983b2ff3742bd0a"
+    },
+    "package": {
+      "revision": "0e8801d2e7eeb7677487d672203f27bca16476d6",
+      "dirty": true,
+      "workingTreeHash": "e43e8794bc151302514b56eb2296ee6ef225193519b0ba3bfbee5eadb44e6ee5"
+    },
+    "language-blade": {
+      "revision": "0e8801d2e7eeb7677487d672203f27bca16476d6",
+      "dirty": true,
+      "workingTreeHash": "e43e8794bc151302514b56eb2296ee6ef225193519b0ba3bfbee5eadb44e6ee5"
+    },
+    "one-theme": {
+      "revision": "14a69683b0e3238e2bc128fbfae3866c1e4ee9c6",
+      "dirty": true,
+      "workingTreeHash": "25d6ed50595d6b10f7d53e41dbbe8f92dcb5c0e911871356f3e6138e5c76df57"
+    }
+  },
+  "fixtures": [
+    {
+      "file": "example.blade.php",
+      "sha256": "4984a98478c78c4bc82f972709312b30ff4e9f4688532d410bd9cb516db50edb"
+    }
+  ],
   "images": [
     {
       "file": "demo.png",
       "label": "Blade syntax highlighting at the default editor font size.",
       "width": 1100,
-      "height": 560
+      "height": 560,
+      "sha256": "2d87b4ff44aa68799a7bf8e93a37a53af57b7435d2bd450a86d3615599637eeb"
     }
   ]
 }
