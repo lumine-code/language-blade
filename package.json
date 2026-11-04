@@ -28,7 +28,8 @@
   },
   "specPackages": [
     "language-php",
-    "symbol-tree-sitter"
+    "symbol-tree-sitter",
+    "language-shellscript"
   ],
   "scripts": {
     "test": "lumine --test spec",

@@ -32,6 +32,9 @@
     "foldsQuery": ["blade-html-folds.scm", "blade-folds.scm"],
     "indentsQuery": ["blade-html-indents.scm", "blade-indents.scm"],
     "injectionsQuery": "blade-injections.scm",
-    "tagsQuery": "blade-tags.scm"
+    "tagsQuery": "blade-tags.scm",
+    "contentEditPolicies": {
+      "content-words": "../lib/content-edit-policy.js"
+    }
   }
 }
